@@ -6,6 +6,6 @@ public class WeaponRotation : MonoBehaviour {
     private void Update() {
         transform.rotation = aiming.rotation;
         // flip gun when facing left
-        transform.localScale = new Vector2(1, Math.Sign(aiming.direction.x));
+        transform.localScale = new Vector2(1, aiming.direction.x > 0 ? 1 : -1);
     }
 }
