@@ -26,9 +26,9 @@ public class PlayerFiring : MonoBehaviour {
         firing.Fire();
     }
 
-    public void FixedUpdate()
+    public void Update()
     {
-        Vector2 targetPoint = cam.ScreenToWorldPoint(input.aim.ReadValue<Vector2>());
-        aiming.FromTo(transform.position, targetPoint);
+        Vector2 mousePosition = cam.ScreenToWorldPoint(input.aim.ReadValue<Vector2>());
+        aiming.FromTo(transform.position, mousePosition);
     }
 }
