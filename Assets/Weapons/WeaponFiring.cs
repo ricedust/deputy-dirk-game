@@ -3,7 +3,7 @@ using UnityEngine;
 
 public class WeaponFiring : MonoBehaviour {
     [SerializeField] private Transform bulletPrefab;
-    [SerializeField] private WeaponData weaponData;
+    [SerializeField] private WeaponSettings settings;
     [SerializeField] private Transform bulletSource;
 
     public event Action onFire;
@@ -13,7 +13,7 @@ public class WeaponFiring : MonoBehaviour {
 
         // set the bullet velocity
         bullet.TryGetComponent(out Rigidbody2D rigidBody);
-        rigidBody.velocity = transform.TransformDirection(Vector2.right) * weaponData.muzzleVelocity;
+        rigidBody.velocity = transform.TransformDirection(Vector2.right) * settings.muzzleVelocity;
 
         // invoke event
         onFire?.Invoke();

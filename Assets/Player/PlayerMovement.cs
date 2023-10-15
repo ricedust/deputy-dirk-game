@@ -1,12 +1,12 @@
 using UnityEngine;
 
 public class PlayerMovement : MonoBehaviour {
-    [SerializeField] private PlayerInput input;
+    [SerializeField] private InputReader input;
     [SerializeField] private Rigidbody2D rigidBody;
-    [SerializeField] private PlayerData playerData;
+    [SerializeField] private PlayerSettings settings;
 
     private void FixedUpdate() {
         Vector2 moveDirection = input.move.ReadValue<Vector2>();
-        rigidBody.AddForce(moveDirection * playerData.moveForce * Time.fixedDeltaTime);
+        rigidBody.AddForce(moveDirection * settings.moveForce * Time.fixedDeltaTime);
     }
 }

@@ -4,9 +4,9 @@ using UnityEngine.InputSystem;
 
 public class PlayerRoll : MonoBehaviour {
 
-    [SerializeField] private PlayerInput input;
+    [SerializeField] private InputReader input;
     [SerializeField] private Rigidbody2D rigidBody;
-    [SerializeField] private PlayerData playerData;
+    [SerializeField] private PlayerSettings settings;
     private float rollForce;
     private Tween rollTween;
 
@@ -14,8 +14,8 @@ public class PlayerRoll : MonoBehaviour {
         rollTween = DOTween.To(
             () => rollForce, 
             x => rollForce = x, 
-            playerData.rollForce, 
-            playerData.rollDurationSeconds / 2
+            settings.rollForce, 
+            settings.rollDurationSeconds / 2
         )
         .SetEase(Ease.OutExpo)
         .SetLoops(2, LoopType.Yoyo)

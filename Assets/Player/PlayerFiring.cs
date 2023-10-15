@@ -4,7 +4,7 @@ using UnityEngine.InputSystem;
 
 public class PlayerFiring : MonoBehaviour {
     
-    [SerializeField] private PlayerInput input;
+    [SerializeField] private InputReader input;
     [SerializeField] private WeaponAiming aiming;
     [SerializeField] private WeaponFiring firing;
     private Camera cam;

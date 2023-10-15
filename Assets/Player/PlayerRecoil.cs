@@ -5,8 +5,8 @@ using UnityEngine.InputSystem;
 public class PlayerRecoil : MonoBehaviour {
     
     [SerializeField] private Rigidbody2D rigidBody;
-    [SerializeField] private PlayerInput input;
-    [SerializeField] private PlayerData playerData;
+    [SerializeField] private InputReader input;
+    [SerializeField] private WeaponSettings settings;
     [SerializeField] private WeaponAiming aiming;
 
     private void OnEnable() {
@@ -18,6 +18,6 @@ public class PlayerRecoil : MonoBehaviour {
     }
 
     private void Recoil(InputAction.CallbackContext context) {
-        rigidBody.AddForce(aiming.direction * -1 * playerData.recoilImpulse, ForceMode2D.Impulse);
+        rigidBody.AddForce(aiming.direction * -1 * settings.recoilImpulse, ForceMode2D.Impulse);
     }
 }
