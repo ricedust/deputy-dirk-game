@@ -13,9 +13,11 @@ public class FlipOnX : MonoBehaviour {
     private void OnEnable() {
         flipLeft = transform.DOScaleX(-1, settings.flipSeconds / 2)
             .SetAutoKill(false)
+            .SetEase(Ease.OutExpo)
             .OnPlay(() => flipRight.Pause());
         flipRight = transform.DOScaleX(1, settings.flipSeconds / 2)
             .SetAutoKill(false)
+            .SetEase(Ease.OutExpo)
             .OnPlay(() => flipLeft.Pause());
 
         if (useRigidbody) return;

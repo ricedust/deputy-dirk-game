@@ -54,7 +54,7 @@ SpriteRenderer:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 811361526369969931}
-  m_Enabled: 1
+  m_Enabled: 0
   m_CastShadows: 0
   m_ReceiveShadows: 0
   m_DynamicOccludee: 1
@@ -212,7 +212,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   rigidBody: {fileID: 6576480244005660786}
   chasePoint: {fileID: 6964461780245083684}
-  settings: {fileID: 11400000, guid: ab9d7c2b4988f7d488c6ba8ee2b2fa24, type: 2}
+  settings: {fileID: 11400000, guid: 5196411844f85de42b7391ad4f605672, type: 2}
 --- !u!114 &3170923419715235069
 MonoBehaviour:
   m_ObjectHideFlags: 0

@@ -13,4 +13,4 @@ MonoBehaviour:
   m_Name: StickerFlipSettings
   m_EditorClassIdentifier: 
   velocityThreshold: 1
-  flipSeconds: 0.5
+  flipSeconds: 1

@@ -12,8 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5950a6158f613a04eae57c8626164cf2, type: 3}
   m_Name: LightShooterChaseSettings
   m_EditorClassIdentifier: 
-  <chaseForce>k__BackingField: 3000
   <strafeSpeed>k__BackingField: 1080
   <minChaseRadius>k__BackingField: 3
-  <maxChaseRadius>k__BackingField: 4
+  <maxChaseRadius>k__BackingField: 5
   <trackingDamping>k__BackingField: 0.01
