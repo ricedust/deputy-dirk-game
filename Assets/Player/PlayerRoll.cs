@@ -1,3 +1,4 @@
+using System;
 using DG.Tweening;
 using UnityEngine;
 using UnityEngine.InputSystem;
@@ -10,7 +11,9 @@ public class PlayerRoll : MonoBehaviour {
     private float rollForce;
     private Tween rollTween;
 
-    private void Awake() {
+    public event Action onRoll;
+
+    private void OnEnable() {
         rollTween = DOTween.To(
             () => rollForce, 
             x => rollForce = x, 
@@ -20,13 +23,12 @@ public class PlayerRoll : MonoBehaviour {
         .SetEase(Ease.OutExpo)
         .SetLoops(2, LoopType.Yoyo)
         .SetAutoKill(false);
-    }
-
-    private void OnEnable() {
+        
         input.roll.performed += Roll;
     }
 
     private void OnDisable() {
+        rollTween.Kill();
         input.roll.performed -= Roll;
     }
 
@@ -38,6 +40,9 @@ public class PlayerRoll : MonoBehaviour {
     }
 
     private void Roll(InputAction.CallbackContext context) {
-        if (!rollTween.IsPlaying()) rollTween.Restart();
+        if (!rollTween.IsPlaying()) {
+            rollTween.Restart();
+            onRoll?.Invoke();
+        }
     }
 }

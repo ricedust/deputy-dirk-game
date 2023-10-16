@@ -125,7 +125,6 @@ GameObject:
   m_Component:
   - component: {fileID: 4596563095242553529}
   - component: {fileID: 978379586781510686}
-  - component: {fileID: 5809766840013882025}
   m_Layer: 0
   m_Name: SniperCompositeSprite
   m_TagString: Untagged
@@ -165,19 +164,6 @@ MonoBehaviour:
   aiming: {fileID: 5038808264988002127}
   firing: {fileID: 8072726707744999765}
   settings: {fileID: 11400000, guid: a62f6d27979e90a4c9f73433b263c1ec, type: 2}
---- !u!114 &5809766840013882025
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3662920599812668482}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6955a440573479f4a84039eb0b7b1abe, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  aiming: {fileID: 5038808264988002127}
 --- !u!1 &5425109713004379205
 GameObject:
   m_ObjectHideFlags: 0
@@ -273,6 +259,7 @@ GameObject:
   - component: {fileID: 5729060796176228099}
   - component: {fileID: 5038808264988002127}
   - component: {fileID: 8072726707744999765}
+  - component: {fileID: 5049293167763196504}
   m_Layer: 0
   m_Name: Sniper
   m_TagString: Untagged
@@ -324,3 +311,16 @@ MonoBehaviour:
   bulletPrefab: {fileID: 4184830475152341023, guid: 27ad090e6e5d44a4682db4c9c8dc3f56, type: 3}
   settings: {fileID: 11400000, guid: a62f6d27979e90a4c9f73433b263c1ec, type: 2}
   bulletSource: {fileID: 30641881782695593}
+--- !u!114 &5049293167763196504
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7932552231065568880}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6955a440573479f4a84039eb0b7b1abe, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  aiming: {fileID: 5038808264988002127}

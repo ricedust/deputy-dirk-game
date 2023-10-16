@@ -29,6 +29,6 @@ public class PlayerFiring : MonoBehaviour {
     public void Update()
     {
         Vector2 mousePosition = cam.ScreenToWorldPoint(input.aim.ReadValue<Vector2>());
-        aiming.FromTo(transform.position, mousePosition);
+        aiming.FromTo(aiming.transform.position, mousePosition);
     }
 }

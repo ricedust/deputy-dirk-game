@@ -9,10 +9,8 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8e924de534e757549a8c4ad6711ae27e, type: 3}
-  m_Name: PlayerSettings
+  m_Script: {fileID: 11500000, guid: 2e669de44d4aa46498e87685ae95ec90, type: 3}
+  m_Name: StickerFlipSettings
   m_EditorClassIdentifier: 
-  <moveForce>k__BackingField: 2800
-  <rollForce>k__BackingField: 2500
-  <rollDurationSeconds>k__BackingField: 0.5
-  <recoilImpulse>k__BackingField: 6
+  velocityThreshold: 1
+  flipSeconds: 0.5
