@@ -10,10 +10,9 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: bdf6af3e4293417469a6989e668008d2, type: 3}
-  m_Name: SniperSettings
+  m_Name: HandgunSettings
   m_EditorClassIdentifier: 
-  muzzleVelocity: 25
-  recoilImpulse: 12
-  kickDistance: 0.5
-  kickRecoverySeconds: 0.5
-  cameraShakeMagnitude: 0.2
+  muzzleVelocity: 20
+  recoilImpulse: 5
+  kickDistance: 0.2
+  kickRecoverySeconds: 0.2

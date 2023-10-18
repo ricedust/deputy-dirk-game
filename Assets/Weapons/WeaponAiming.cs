@@ -11,8 +11,8 @@ public class WeaponAiming : MonoBehaviour {
     /// </summary>
     public Quaternion rotation { get; private set; }
 
-    public void FromTo(Vector2 origin, Vector2 target) {
-        direction = (target - origin).normalized; 
+    public void AimAt(Vector2 target) {
+        direction = (target - (Vector2)transform.position).normalized; 
         rotation = Quaternion.FromToRotation(Vector2.right, direction);
     }
 }

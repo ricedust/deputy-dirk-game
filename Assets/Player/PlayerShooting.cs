@@ -1,8 +1,7 @@
-using System;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
-public class PlayerFiring : MonoBehaviour {
+public class PlayerShooting : MonoBehaviour {
     
     [SerializeField] private InputReader input;
     [SerializeField] private WeaponAiming aiming;
@@ -29,6 +28,6 @@ public class PlayerFiring : MonoBehaviour {
     public void Update()
     {
         Vector2 mousePosition = cam.ScreenToWorldPoint(input.aim.ReadValue<Vector2>());
-        aiming.FromTo(aiming.transform.position, mousePosition);
+        aiming.AimAt(mousePosition);
     }
 }
