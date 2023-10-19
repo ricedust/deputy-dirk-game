@@ -15,12 +15,14 @@ public class WeaponFiring : MonoBehaviour {
         Transform bullet = Instantiate(bulletPrefab, bulletSource.position, bulletSource.rotation);
 
         // set the bullet velocity
-        if (!bullet.TryGetComponent<Rigidbody2D>(out Rigidbody2D bulletRigidbody)) return;
+        if (!bullet.TryGetComponent(out Rigidbody2D bulletRigidbody)) return;
         bulletRigidbody.velocity = transform.TransformDirection(Vector2.right) * settings.muzzleVelocity;
         bulletRigidbody.excludeLayers = gunOwner;
 
         // invoke event
         onFire?.Invoke();
-        cameraShake?.GenerateImpulse(UnityEngine.Random.insideUnitCircle * settings.cameraShakeMagnitude);
+
+        // shake camera relative to firing directino
+        cameraShake?.GenerateImpulse(bulletSource.rotation * Vector2.left * settings.cameraShakeMagnitude);
     }
 }

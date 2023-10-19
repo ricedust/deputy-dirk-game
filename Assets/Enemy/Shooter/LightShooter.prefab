@@ -113,6 +113,8 @@ GameObject:
   - component: {fileID: 1572839984729400338}
   - component: {fileID: 3170923419715235069}
   - component: {fileID: 8815164694592193910}
+  - component: {fileID: 933242221468124625}
+  - component: {fileID: 4555833971333121351}
   m_Layer: 7
   m_Name: LightShooter
   m_TagString: Untagged
@@ -245,6 +247,39 @@ MonoBehaviour:
   aiming: {fileID: 2884642638271072713}
   firing: {fileID: 3951335287944233854}
   player: {fileID: 11400000, guid: c13f8a04ce617cd4897834f43d51226b, type: 2}
+--- !u!114 &933242221468124625
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7819295191574415803}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1772ae2e5cf9f3c4a910fd22723bcf96, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  bulletLayer:
+    serializedVersion: 2
+    m_Bits: 8
+--- !u!114 &4555833971333121351
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7819295191574415803}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 777c92b500608ca4babf7bacfcac7332, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  bulletReceiver: {fileID: 933242221468124625}
+  componentsToDisable:
+  - {fileID: 1572839984729400338}
+  - {fileID: 3170923419715235069}
+  - {fileID: 8815164694592193910}
+  - {fileID: 1401549050001589791}
 --- !u!1 &8573424405936070462
 GameObject:
   m_ObjectHideFlags: 0
@@ -367,6 +402,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   animator: {fileID: 376735890737184317}
   rigidBody: {fileID: 6576480244005660786}
+  enemyDeath: {fileID: 4555833971333121351}
   runVelocityThreshold: 0.5
 --- !u!114 &4633723506644247192
 MonoBehaviour:

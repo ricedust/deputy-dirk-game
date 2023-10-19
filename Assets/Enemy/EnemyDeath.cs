@@ -1,7 +1,21 @@
+using System;
 using UnityEngine;
 
 public class EnemyDeath : MonoBehaviour {
-    private void OnCollisionEnter2D(Collision2D other) {
-        if (other.collider.tag.Equals(tag)) return;
+    [SerializeField] private BulletReceiver bulletReceiver;
+    [SerializeField] private Behaviour[] componentsToDisable;
+
+    public event Action onDeath;
+    private void OnEnable() {
+        bulletReceiver.onHit += Die;
+    }
+
+    private void OnDisable() {
+        bulletReceiver.onHit -= Die;
+    }
+
+    private void Die() {
+        Array.ForEach(componentsToDisable, component => component.enabled = false);
+        onDeath?.Invoke();
     }
 }
