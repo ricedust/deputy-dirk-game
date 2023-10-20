@@ -12,8 +12,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bdf6af3e4293417469a6989e668008d2, type: 3}
   m_Name: SniperSettings
   m_EditorClassIdentifier: 
-  muzzleVelocity: 50
-  recoilImpulse: 12
+  muzzleVelocity: 30
+  recoilImpulse: 15
   kickDistance: 0.5
   kickRecoverySeconds: 0.5
   cameraShakeMagnitude: 0.3

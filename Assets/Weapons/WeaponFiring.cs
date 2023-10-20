@@ -15,9 +15,12 @@ public class WeaponFiring : MonoBehaviour {
         Transform bullet = Instantiate(bulletPrefab, bulletSource.position, bulletSource.rotation);
 
         // set the bullet velocity
-        if (!bullet.TryGetComponent(out Rigidbody2D bulletRigidbody)) return;
-        bulletRigidbody.velocity = transform.TransformDirection(Vector2.right) * settings.muzzleVelocity;
-        bulletRigidbody.excludeLayers = gunOwner;
+        if (!bullet.TryGetComponent(out BulletInitializer bulletInitializer)) return;
+        // set bullet velocity and provide layermask for gunowner
+        bulletInitializer.Initialize(
+            transform.TransformDirection(Vector2.right) * settings.muzzleVelocity,
+            gunOwner
+        );
 
         // invoke event
         onFire?.Invoke();
