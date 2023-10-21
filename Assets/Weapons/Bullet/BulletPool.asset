@@ -9,9 +9,9 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8e924de534e757549a8c4ad6711ae27e, type: 3}
-  m_Name: PlayerSettings
+  m_Script: {fileID: 11500000, guid: dade65619c18cf643be4e23594fb60aa, type: 3}
+  m_Name: BulletPool
   m_EditorClassIdentifier: 
-  <moveForce>k__BackingField: 3200
-  <rollForce>k__BackingField: 3500
-  <rollDurationSeconds>k__BackingField: 0.4
+  prefab: {fileID: 8344834345935295136, guid: 27ad090e6e5d44a4682db4c9c8dc3f56, type: 3}
+  defaultCapacity: 32
+  maxCapacity: 64

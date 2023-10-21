@@ -60,8 +60,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 70f79a14cbfe39742946179ca7991d4f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  bulletPrefab: {fileID: 4184830475152341023, guid: 27ad090e6e5d44a4682db4c9c8dc3f56, type: 3}
-  settings: {fileID: 11400000, guid: 8352a6fab1adfb3439fb33719fc28588, type: 2}
+  aiming: {fileID: 3602555522181660122}
+  weaponSettings: {fileID: 11400000, guid: 8352a6fab1adfb3439fb33719fc28588, type: 2}
+  bulletPool: {fileID: 11400000, guid: 8ac49dd84b0c57442a9f265b873eea3b, type: 2}
+  bulletSettings: {fileID: 11400000, guid: 72ed466043c914a438df621dbc811d1e, type: 2}
   bulletSource: {fileID: 2143996356484891156}
   gunOwner:
     serializedVersion: 2
