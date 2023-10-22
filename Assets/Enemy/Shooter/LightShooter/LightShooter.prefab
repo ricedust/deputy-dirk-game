@@ -45,7 +45,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 816724a017ae76546b13ef2ce2a7c524, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  settings: {fileID: 11400000, guid: ab9d7c2b4988f7d488c6ba8ee2b2fa24, type: 2}
+  settings: {fileID: 11400000, guid: 5196411844f85de42b7391ad4f605672, type: 2}
   player: {fileID: 11400000, guid: c13f8a04ce617cd4897834f43d51226b, type: 2}
 --- !u!212 &4989869051148547619
 SpriteRenderer:
@@ -112,6 +112,7 @@ GameObject:
   - component: {fileID: 1401549050001589791}
   - component: {fileID: 1572839984729400338}
   - component: {fileID: 3170923419715235069}
+  - component: {fileID: 7559075635691663566}
   - component: {fileID: 8815164694592193910}
   - component: {fileID: 933242221468124625}
   - component: {fileID: 4555833971333121351}
@@ -199,8 +200,8 @@ CapsuleCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0.9}
-  m_Size: {x: 0.75, y: 1.8}
+  m_Offset: {x: 0, y: 1}
+  m_Size: {x: 1.1, y: 2}
   m_Direction: 0
 --- !u!114 &1572839984729400338
 MonoBehaviour:
@@ -232,6 +233,23 @@ MonoBehaviour:
   rigidBody: {fileID: 6576480244005660786}
   settings: {fileID: 11400000, guid: 5196411844f85de42b7391ad4f605672, type: 2}
   player: {fileID: 11400000, guid: c13f8a04ce617cd4897834f43d51226b, type: 2}
+--- !u!114 &7559075635691663566
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7819295191574415803}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a39c3e62dad110a4882f977027d238b5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  settings: {fileID: 11400000, guid: 5196411844f85de42b7391ad4f605672, type: 2}
+  tick: {fileID: 11400000, guid: acdc85196fd5ee341a366310ded3dde1, type: 2}
+  toDisable:
+    behaviours:
+    - {fileID: 1572839984729400338}
 --- !u!114 &8815164694592193910
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -247,6 +265,8 @@ MonoBehaviour:
   aiming: {fileID: 2884642638271072713}
   firing: {fileID: 3951335287944233854}
   player: {fileID: 11400000, guid: c13f8a04ce617cd4897834f43d51226b, type: 2}
+  tick: {fileID: 11400000, guid: acdc85196fd5ee341a366310ded3dde1, type: 2}
+  settings: {fileID: 11400000, guid: 5196411844f85de42b7391ad4f605672, type: 2}
 --- !u!114 &933242221468124625
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -275,11 +295,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   bulletReceiver: {fileID: 933242221468124625}
-  componentsToDisable:
-  - {fileID: 1572839984729400338}
-  - {fileID: 3170923419715235069}
-  - {fileID: 8815164694592193910}
-  - {fileID: 1401549050001589791}
+  toDisable:
+    behaviours:
+    - {fileID: 1572839984729400338}
+    - {fileID: 3170923419715235069}
+    - {fileID: 8815164694592193910}
+    - {fileID: 1401549050001589791}
+    - {fileID: 7559075635691663566}
 --- !u!1 &8573424405936070462
 GameObject:
   m_ObjectHideFlags: 0
@@ -432,6 +454,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Handgun
       objectReference: {fileID: 0}
+    - target: {fileID: 5153111597923263196, guid: 23fb2e000b3edc54a9a74dd3eee451df, type: 3}
+      propertyPath: recoilRecipient
+      value: 
+      objectReference: {fileID: 6576480244005660786}
     - target: {fileID: 8766868548656888289, guid: 23fb2e000b3edc54a9a74dd3eee451df, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0

@@ -2,14 +2,15 @@ using DG.Tweening;
 using UnityEngine;
 
 public class WeaponRecoil : MonoBehaviour {
-    [SerializeField] private WeaponAiming aiming;
     [SerializeField] private WeaponFiring firing;
     [SerializeField] private WeaponSettings settings;
+    [SerializeField] private Transform weaponSprite;
+    [SerializeField] private Rigidbody2D recoilRecipient;
 
     private Tween recoilTween;
     
     private void Awake() {
-        recoilTween = transform.DOLocalMoveX(0, settings.kickRecoverySeconds)
+        recoilTween = weaponSprite.DOLocalMoveX(0, settings.kickRecoverySeconds)
             .SetEase(Ease.OutExpo)
             .SetAutoKill(false);
     }
@@ -22,8 +23,15 @@ public class WeaponRecoil : MonoBehaviour {
         firing.onFire -= KickBack;
     }
 
-    private void KickBack() {
-        transform.localPosition += Vector3.left * settings.kickDistance;
+    private void OnDestroy() {
+        recoilTween.Kill();
+    }
+
+    private void KickBack(WeaponAiming aiming) {
+        // apply impulse to shooter
+        recoilRecipient.AddForce(aiming.direction * -1 * settings.recoilImpulse, ForceMode2D.Impulse);
+        // visually kick the gun back
+        weaponSprite.localPosition += Vector3.left * settings.kickDistance;
         recoilTween.Restart();
     }
 }

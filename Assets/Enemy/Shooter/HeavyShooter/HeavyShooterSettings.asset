@@ -1,0 +1,30 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8d72ad09a3d713847a9119d1c42591de, type: 3}
+  m_Name: HeavyShooterSettings
+  m_EditorClassIdentifier: 
+  <moveForce>k__BackingField: 2500
+  <avoider>k__BackingField:
+    <avoidRadius>k__BackingField: 5
+    <avoidForce>k__BackingField: 4000
+  <chaser>k__BackingField:
+    <strafeSpeed>k__BackingField: 360
+    <minChaseRadius>k__BackingField: 6
+    <maxChaseRadius>k__BackingField: 7
+    <trackingDamping>k__BackingField: 0.01
+  <pauser>k__BackingField:
+    <pauseChance>k__BackingField: 0.5
+    <minPause>k__BackingField: 3
+    <maxPause>k__BackingField: 5
+  <shooter>k__BackingField:
+    <shootChance>k__BackingField: 0.4
+    <range>k__BackingField: 8

@@ -3,10 +3,11 @@ using UnityEngine;
 
 public class EnemyDeath : MonoBehaviour {
     [SerializeField] private BulletReceiver bulletReceiver;
-    [SerializeField] private Behaviour[] componentsToDisable;
+    [SerializeField] private BehaviorGroup toDisable;
 
     public event Action onDeath;
     private void OnEnable() {
+        toDisable.SetEnabled(true);
         bulletReceiver.onHit += Die;
     }
 
@@ -15,7 +16,7 @@ public class EnemyDeath : MonoBehaviour {
     }
 
     private void Die() {
-        Array.ForEach(componentsToDisable, component => component.enabled = false);
+        toDisable.SetEnabled(false);
         onDeath?.Invoke();
     }
 }

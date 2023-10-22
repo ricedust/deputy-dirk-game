@@ -1,3 +1,4 @@
+using System;
 using UnityEngine;
 
 public class Avoider : MonoBehaviour {
@@ -10,9 +11,15 @@ public class Avoider : MonoBehaviour {
         Vector2 repelFrom = (Vector2)transform.position - player.position;
 
         // outside of avoid radius, no need to avoid
-        if (repelFrom.magnitude > settings.avoidRadius) return;
+        if (repelFrom.magnitude > settings.avoider.avoidRadius) return;
 
-        Vector2 repelForce = repelFrom.normalized * settings.avoidForce * Time.fixedDeltaTime;
+        Vector2 repelForce = repelFrom.normalized * settings.avoider.avoidForce * Time.fixedDeltaTime;
         rigidBody.AddForce(repelForce);
     }
+}
+
+[Serializable]
+public struct AvoidSettings {
+    [field: SerializeField] public float avoidRadius { get; private set; }
+    [field: SerializeField] public float avoidForce { get; private set; }
 }

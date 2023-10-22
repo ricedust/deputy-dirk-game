@@ -41,7 +41,6 @@ GameObject:
   m_Component:
   - component: {fileID: 2034038594735187969}
   - component: {fileID: 2227222723766271299}
-  - component: {fileID: 9162358769824165077}
   m_Layer: 0
   m_Name: SniperSprite
   m_TagString: Untagged
@@ -116,21 +115,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!114 &9162358769824165077
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6399479269530175164}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 39613511e908652449523a62e257da6d, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  aiming: {fileID: 5038808264988002127}
-  firing: {fileID: 8072726707744999765}
-  settings: {fileID: 11400000, guid: a62f6d27979e90a4c9f73433b263c1ec, type: 2}
 --- !u!1 &7932552231065568880
 GameObject:
   m_ObjectHideFlags: 0
@@ -142,7 +126,9 @@ GameObject:
   - component: {fileID: 5729060796176228099}
   - component: {fileID: 5038808264988002127}
   - component: {fileID: 8072726707744999765}
-  - component: {fileID: 5049293167763196504}
+  - component: {fileID: 1117714006993762109}
+  - component: {fileID: 1596115589878167666}
+  - component: {fileID: 1628382944327932529}
   - component: {fileID: -8117914718389308630}
   m_Layer: 0
   m_Name: Sniper
@@ -192,16 +178,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 70f79a14cbfe39742946179ca7991d4f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  bulletPool: {fileID: 11400000, guid: 8ac49dd84b0c57442a9f265b873eea3b, type: 2}
   aiming: {fileID: 5038808264988002127}
-  bulletSettings: {fileID: 11400000, guid: 610004d10c7100b4ebb734948e62ea5b, type: 2}
-  weaponSettings: {fileID: 11400000, guid: a62f6d27979e90a4c9f73433b263c1ec, type: 2}
+  settings: {fileID: 11400000, guid: a62f6d27979e90a4c9f73433b263c1ec, type: 2}
+  bulletPool: {fileID: 11400000, guid: 8ac49dd84b0c57442a9f265b873eea3b, type: 2}
   bulletSource: {fileID: 30641881782695593}
   gunOwner:
     serializedVersion: 2
     m_Bits: 64
   cameraShake: {fileID: -8117914718389308630}
---- !u!114 &5049293167763196504
+--- !u!114 &1117714006993762109
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -214,6 +199,36 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   aiming: {fileID: 5038808264988002127}
+--- !u!114 &1596115589878167666
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7932552231065568880}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 39613511e908652449523a62e257da6d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  firing: {fileID: 8072726707744999765}
+  settings: {fileID: 11400000, guid: a62f6d27979e90a4c9f73433b263c1ec, type: 2}
+  weaponSprite: {fileID: 2034038594735187969}
+  recoilRecipient: {fileID: 0}
+--- !u!114 &1628382944327932529
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7932552231065568880}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 95f208881f1d7764298409dc8d0159f4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  firing: {fileID: 8072726707744999765}
+  settings: {fileID: 11400000, guid: a62f6d27979e90a4c9f73433b263c1ec, type: 2}
 --- !u!114 &-8117914718389308630
 MonoBehaviour:
   m_ObjectHideFlags: 0

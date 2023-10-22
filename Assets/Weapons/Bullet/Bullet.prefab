@@ -392,6 +392,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   rigidBody: {fileID: 4280845045532867941}
   trigger: {fileID: 8701385404598243115}
+  trail: {fileID: 6124404366155468809}
 --- !u!114 &4102951473863647732
 MonoBehaviour:
   m_ObjectHideFlags: 0

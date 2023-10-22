@@ -12,7 +12,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bdf6af3e4293417469a6989e668008d2, type: 3}
   m_Name: HandgunSettings
   m_EditorClassIdentifier: 
-  muzzleVelocity: 20
-  recoilImpulse: 5
-  kickDistance: 0.2
-  kickRecoverySeconds: 0.2
+  <recoilImpulse>k__BackingField: 10
+  <kickDistance>k__BackingField: 1
+  <kickRecoverySeconds>k__BackingField: 1
+  <cooldownSeconds>k__BackingField: 0
+  <cameraShakeMagnitude>k__BackingField: 0
+  <bullet>k__BackingField:
+    <speed>k__BackingField: 20
+    <bounces>k__BackingField: 0
+    <isPiercing>k__BackingField: 0

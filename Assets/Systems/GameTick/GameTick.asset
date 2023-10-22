@@ -9,9 +9,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 357656b782aca794cafe9ac0b479da70, type: 3}
-  m_Name: SniperBulletSettings
+  m_Script: {fileID: 11500000, guid: 10e007c5f3f69c34d95d6c1a6a49a315, type: 3}
+  m_Name: GameTick
   m_EditorClassIdentifier: 
-  <speed>k__BackingField: 30
-  <bounces>k__BackingField: 2
-  <isPiercing>k__BackingField: 1
+  <ticksPerSecond>k__BackingField: 1

@@ -1,31 +1,63 @@
 using System;
+using System.Collections;
 using Cinemachine;
 using UnityEngine;
 
 public class WeaponFiring : MonoBehaviour {
     [SerializeField] private WeaponAiming aiming;
-    [SerializeField] private WeaponSettings weaponSettings;
+    [SerializeField] private WeaponSettings settings;
     [SerializeField] private Pool bulletPool;
-    [SerializeField] private BulletSettings bulletSettings;
     [SerializeField] private Transform bulletSource;
     [SerializeField] private LayerMask gunOwner;
     [SerializeField] private CinemachineImpulseSource cameraShake;
-
-    public event Action onFire;
+    private Coroutine burstFireRoutine;
+    public bool isLocked { get; private set; }
+    public event Action<WeaponAiming> onFire;
+    public void SetLocked(bool isLocked) => this.isLocked = isLocked;
 
     public void Fire() {
-        GameObject bullet = bulletPool.Get();
-        bullet.transform.position = bulletSource.position;
-        bullet.transform.rotation = bulletSource.rotation;
+        // don't fire if locked
+        if (isLocked) return;
 
+        // fire a burst if firing pattern is enabled
+        if (settings.firingPattern.enabled) {
+            if (burstFireRoutine != null) StopCoroutine(burstFireRoutine);
+            burstFireRoutine = StartCoroutine(FireBurst());
+            return;
+        }
+        
+        // otherwise just fire a single shot
+        FireSingle();
+    }
+
+    private void FireSingle() {
+        // get a bullet and apply transforms
+        GameObject bullet = bulletPool.Get();
+        bullet.transform.SetPositionAndRotation(bulletSource.position, bulletSource.rotation);
+
+        // initialize the bullet
         if (!bullet.TryGetComponent(out BulletInitializer bulletInitializer)) return;
-        // set bullet velocity and provide layermask for gunowner
-        bulletInitializer.Initialize(aiming.direction, bulletSettings, gunOwner);
+        bulletInitializer.Initialize(aiming.direction, settings.bullet, gunOwner);
 
         // invoke event
-        onFire?.Invoke();
+        onFire?.Invoke(aiming);
 
-        // shake camera relative to firing directino
-        cameraShake?.GenerateImpulse(bulletSource.rotation * Vector2.left * weaponSettings.cameraShakeMagnitude);
+        // shake camera relative to firing direction
+        cameraShake?.GenerateImpulse(bulletSource.rotation * Vector2.left * settings.cameraShakeMagnitude);
     }
+
+    private IEnumerator FireBurst() {
+        for (int i = 0; i < settings.firingPattern.shotsPerBurst; i++) {
+            FireSingle();
+            yield return new WaitForSeconds(settings.firingPattern.secondsBetweenShots);
+        }
+    }
+
+}
+
+[Serializable]
+public struct FiringPattern {
+    [field: SerializeField] public bool enabled { get; private set; }
+    [field: SerializeField] public float secondsBetweenShots { get; private set; }
+    [field: SerializeField] public int shotsPerBurst { get; private set; }
 }
