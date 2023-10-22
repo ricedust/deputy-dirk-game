@@ -276,9 +276,9 @@ GameObject:
   - component: {fileID: 4184830475152341023}
   - component: {fileID: 4280845045532867941}
   - component: {fileID: 8701385404598243115}
-  - component: {fileID: 4516673798165712053}
   - component: {fileID: 7758214242167954619}
   - component: {fileID: 4102951473863647732}
+  - component: {fileID: 5253532544052222875}
   m_Layer: 3
   m_Name: Bullet
   m_TagString: Untagged
@@ -318,7 +318,7 @@ Rigidbody2D:
   m_Mass: 1
   m_LinearDrag: 0
   m_AngularDrag: 0.05
-  m_GravityScale: 1
+  m_GravityScale: 0
   m_Material: {fileID: 6200000, guid: d6d13d006a56d4a4aba09fbd78e8b084, type: 2}
   m_IncludeLayers:
     serializedVersion: 2
@@ -365,19 +365,6 @@ CircleCollider2D:
   m_Offset: {x: 0.1, y: 0}
   serializedVersion: 2
   m_Radius: 0.03
---- !u!114 &4516673798165712053
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8344834345935295136}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4ec686260e8fade49b5f0d50923c0f36, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  rigidBody: {fileID: 4280845045532867941}
 --- !u!114 &7758214242167954619
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -407,3 +394,19 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   bulletPool: {fileID: 11400000, guid: 8ac49dd84b0c57442a9f265b873eea3b, type: 2}
   initializer: {fileID: 7758214242167954619}
+  rigidBody: {fileID: 4280845045532867941}
+--- !u!114 &5253532544052222875
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8344834345935295136}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ae6e6b11eab14de48b9c4d763daedae9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  initializer: {fileID: 7758214242167954619}
+  bulletPool: {fileID: 11400000, guid: 8ac49dd84b0c57442a9f265b873eea3b, type: 2}
+  rigidBody: {fileID: 4280845045532867941}

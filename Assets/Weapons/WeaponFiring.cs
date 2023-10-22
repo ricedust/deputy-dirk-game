@@ -10,10 +10,15 @@ public class WeaponFiring : MonoBehaviour {
     [SerializeField] private Transform bulletSource;
     [SerializeField] private LayerMask gunOwner;
     [SerializeField] private CinemachineImpulseSource cameraShake;
+    
     private Coroutine burstFireRoutine;
     public bool isLocked { get; private set; }
     public event Action<WeaponAiming> onFire;
     public void SetLocked(bool isLocked) => this.isLocked = isLocked;
+
+    private void OnDisable() {
+        if (burstFireRoutine != null) StopCoroutine(burstFireRoutine);
+    }
 
     public void Fire() {
         // don't fire if locked
@@ -25,9 +30,8 @@ public class WeaponFiring : MonoBehaviour {
             burstFireRoutine = StartCoroutine(FireBurst());
             return;
         }
-        
-        // otherwise just fire a single shot
-        FireSingle();
+
+        FireSingle(); // otherwise just fire a single shot
     }
 
     private void FireSingle() {

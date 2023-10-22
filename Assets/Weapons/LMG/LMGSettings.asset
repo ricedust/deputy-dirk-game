@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bdf6af3e4293417469a6989e668008d2, type: 3}
   m_Name: LMGSettings
   m_EditorClassIdentifier: 
-  <recoilImpulse>k__BackingField: 10
+  <recoilImpulse>k__BackingField: 5
   <kickDistance>k__BackingField: 1
   <kickRecoverySeconds>k__BackingField: 1
   <cooldownSeconds>k__BackingField: 0
@@ -20,4 +20,9 @@ MonoBehaviour:
   <bullet>k__BackingField:
     <speed>k__BackingField: 20
     <bounces>k__BackingField: 0
+    <knockbackImpulse>k__BackingField: 10
     <isPiercing>k__BackingField: 0
+  <firingPattern>k__BackingField:
+    <enabled>k__BackingField: 1
+    <secondsBetweenShots>k__BackingField: 0.25
+    <shotsPerBurst>k__BackingField: 5

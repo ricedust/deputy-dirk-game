@@ -21,5 +21,6 @@ public struct BulletSettings {
     
     [field: SerializeField] public float speed { get; private set; }
     [field: SerializeField] public int bounces { get; private set; }
+    [field: SerializeField] public int knockbackImpulse { get; private set; }
     [field: SerializeField] public bool isPiercing { get; private set; }
 }
