@@ -1,8 +1,8 @@
 using System.Collections;
 using UnityEngine;
 
-public class BulletExpiration : MonoBehaviour {
-    [SerializeField] private Pool bulletPool;
+public class ExpireToPool : MonoBehaviour {
+    [SerializeField] private Pool pool;
     [SerializeField] private float expirationSeconds;
 
     private void OnEnable() {
@@ -11,6 +11,6 @@ public class BulletExpiration : MonoBehaviour {
 
     private IEnumerator Expire() {
         yield return new WaitForSeconds(expirationSeconds);
-        bulletPool.Release(gameObject);
+        pool.Release(gameObject);
     }
 }

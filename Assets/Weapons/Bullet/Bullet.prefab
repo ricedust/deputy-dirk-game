@@ -423,5 +423,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fd07cec2d19d2e24da437bec795d5bf3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  bulletPool: {fileID: 11400000, guid: 8ac49dd84b0c57442a9f265b873eea3b, type: 2}
+  pool: {fileID: 11400000, guid: 8ac49dd84b0c57442a9f265b873eea3b, type: 2}
   expirationSeconds: 5
