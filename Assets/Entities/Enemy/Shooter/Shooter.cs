@@ -5,7 +5,7 @@ using Random = UnityEngine.Random;
 public class Shooter : MonoBehaviour {
     [SerializeField] private WeaponAiming aiming;
     [SerializeField] private WeaponFiring firing;
-    [SerializeField] private PlayerChannel player;
+    [SerializeField] private PlayerData player;
     [SerializeField] private GameTick tick;
     [SerializeField] private ShooterSettings settings;
 

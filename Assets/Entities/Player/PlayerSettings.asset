@@ -12,6 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8e924de534e757549a8c4ad6711ae27e, type: 3}
   m_Name: PlayerSettings
   m_EditorClassIdentifier: 
-  <moveForce>k__BackingField: 3200
-  <rollForce>k__BackingField: 3500
+  <lives>k__BackingField: 3
+  <moveForce>k__BackingField: 3600
+  <rollForce>k__BackingField: 4000
   <rollDurationSeconds>k__BackingField: 0.4

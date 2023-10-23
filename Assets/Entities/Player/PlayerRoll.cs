@@ -8,10 +8,9 @@ public class PlayerRoll : MonoBehaviour {
     [SerializeField] private InputReader input;
     [SerializeField] private Rigidbody2D rigidBody;
     [SerializeField] private PlayerSettings settings;
+    [SerializeField] private PlayerData data;
     private float rollForce;
     private Tween rollTween;
-
-    public event Action onRoll;
 
     private void OnEnable() {
         rollTween = DOTween.To(
@@ -28,8 +27,11 @@ public class PlayerRoll : MonoBehaviour {
     }
 
     private void OnDisable() {
-        rollTween.Kill();
         input.roll.performed -= Roll;
+    }
+
+    private void OnDestroy() {
+        rollTween.Kill();
     }
 
     private void FixedUpdate() {
@@ -42,7 +44,7 @@ public class PlayerRoll : MonoBehaviour {
     private void Roll(InputAction.CallbackContext context) {
         if (!rollTween.IsPlaying()) {
             rollTween.Restart();
-            onRoll?.Invoke();
+            data.RaiseOnRoll();
         }
     }
 }

@@ -6,7 +6,7 @@ using UnityEngine;
 public class MouseFollower : MonoBehaviour {
     
     [SerializeField] private MouseFollowerSettings settings;
-    [SerializeField] private PlayerChannel player;
+    [SerializeField] private PlayerData player;
     [SerializeField] private InputReader input;
     private Camera cam;
 

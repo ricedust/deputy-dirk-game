@@ -242,6 +242,34 @@ public partial class @InputActions: IInputActionCollection2, IDisposable
                     ""isPartOfComposite"": false
                 }
             ]
+        },
+        {
+            ""name"": ""ui"",
+            ""id"": ""fa986ac8-0f93-4438-81c0-330bcec91f12"",
+            ""actions"": [
+                {
+                    ""name"": ""play"",
+                    ""type"": ""Button"",
+                    ""id"": ""1690acb0-f8e4-4e15-b9dd-dfb812772077"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
+                }
+            ],
+            ""bindings"": [
+                {
+                    ""name"": """",
+                    ""id"": ""f1d5ff8b-21c4-44a3-90bc-4ecf843148fe"",
+                    ""path"": ""<Keyboard>/space"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""play"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                }
+            ]
         }
     ],
     ""controlSchemes"": []
@@ -252,6 +280,9 @@ public partial class @InputActions: IInputActionCollection2, IDisposable
         m_player_aim = m_player.FindAction("aim", throwIfNotFound: true);
         m_player_shoot = m_player.FindAction("shoot", throwIfNotFound: true);
         m_player_roll = m_player.FindAction("roll", throwIfNotFound: true);
+        // ui
+        m_ui = asset.FindActionMap("ui", throwIfNotFound: true);
+        m_ui_play = m_ui.FindAction("play", throwIfNotFound: true);
     }
 
     public void Dispose()
@@ -379,11 +410,61 @@ public partial class @InputActions: IInputActionCollection2, IDisposable
         }
     }
     public PlayerActions @player => new PlayerActions(this);
+
+    // ui
+    private readonly InputActionMap m_ui;
+    private List<IUiActions> m_UiActionsCallbackInterfaces = new List<IUiActions>();
+    private readonly InputAction m_ui_play;
+    public struct UiActions
+    {
+        private @InputActions m_Wrapper;
+        public UiActions(@InputActions wrapper) { m_Wrapper = wrapper; }
+        public InputAction @play => m_Wrapper.m_ui_play;
+        public InputActionMap Get() { return m_Wrapper.m_ui; }
+        public void Enable() { Get().Enable(); }
+        public void Disable() { Get().Disable(); }
+        public bool enabled => Get().enabled;
+        public static implicit operator InputActionMap(UiActions set) { return set.Get(); }
+        public void AddCallbacks(IUiActions instance)
+        {
+            if (instance == null || m_Wrapper.m_UiActionsCallbackInterfaces.Contains(instance)) return;
+            m_Wrapper.m_UiActionsCallbackInterfaces.Add(instance);
+            @play.started += instance.OnPlay;
+            @play.performed += instance.OnPlay;
+            @play.canceled += instance.OnPlay;
+        }
+
+        private void UnregisterCallbacks(IUiActions instance)
+        {
+            @play.started -= instance.OnPlay;
+            @play.performed -= instance.OnPlay;
+            @play.canceled -= instance.OnPlay;
+        }
+
+        public void RemoveCallbacks(IUiActions instance)
+        {
+            if (m_Wrapper.m_UiActionsCallbackInterfaces.Remove(instance))
+                UnregisterCallbacks(instance);
+        }
+
+        public void SetCallbacks(IUiActions instance)
+        {
+            foreach (var item in m_Wrapper.m_UiActionsCallbackInterfaces)
+                UnregisterCallbacks(item);
+            m_Wrapper.m_UiActionsCallbackInterfaces.Clear();
+            AddCallbacks(instance);
+        }
+    }
+    public UiActions @ui => new UiActions(this);
     public interface IPlayerActions
     {
         void OnMove(InputAction.CallbackContext context);
         void OnAim(InputAction.CallbackContext context);
         void OnShoot(InputAction.CallbackContext context);
         void OnRoll(InputAction.CallbackContext context);
+    }
+    public interface IUiActions
+    {
+        void OnPlay(InputAction.CallbackContext context);
     }
 }

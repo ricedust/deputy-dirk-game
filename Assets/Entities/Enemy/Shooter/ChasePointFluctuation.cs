@@ -2,7 +2,7 @@ using UnityEngine;
 
 public class ChasePointFluctuation : MonoBehaviour {
     [SerializeField] private ShooterSettings settings;
-    [SerializeField] private PlayerChannel player;
+    [SerializeField] private PlayerData player;
 
     /// <summary>
     /// Seed for Perlin noise.

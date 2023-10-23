@@ -4,7 +4,7 @@ using UnityEngine;
 public class Avoider : MonoBehaviour {
     [SerializeField] private Rigidbody2D rigidBody;
     [SerializeField] private EnemySettings settings;
-    [SerializeField] private PlayerChannel player;
+    [SerializeField] private PlayerData player;
 
     private void FixedUpdate() {
         // the vector from the player to this enemy

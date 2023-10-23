@@ -8,6 +8,7 @@ public class InputReader : ScriptableObject {
     public InputAction aim { get; private set; }
     public InputAction shoot { get; private set; }
     public InputAction roll { get; private set; }
+    public InputAction play { get; private set; }
     private InputActions inputActions;
 
     private void OnEnable() {
@@ -18,5 +19,7 @@ public class InputReader : ScriptableObject {
         aim = inputActions.player.aim;
         shoot = inputActions.player.shoot;
         roll = inputActions.player.roll;
+
+        play = inputActions.ui.play;
     }
 }

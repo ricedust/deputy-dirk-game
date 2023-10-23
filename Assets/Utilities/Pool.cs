@@ -1,5 +1,7 @@
+using System;
 using UnityEngine;
 using UnityEngine.Pool;
+using UnityEngine.SceneManagement;
 
 [CreateAssetMenu(menuName = "Pool")]
 public class Pool : ScriptableObject {
@@ -16,8 +18,15 @@ public class Pool : ScriptableObject {
             (gameObject) => Destroy(gameObject),
             false, defaultCapacity, maxCapacity
         );
+
+        SceneManager.activeSceneChanged += Dispose;
     }
 
+    private void OnDisable() {
+        SceneManager.activeSceneChanged -= Dispose;
+    }
+
+    private void Dispose(Scene arg0, Scene arg1) => pool.Clear();
     public GameObject Get() => pool.Get();
     public void Release(GameObject gameObject) => pool.Release(gameObject);
 }

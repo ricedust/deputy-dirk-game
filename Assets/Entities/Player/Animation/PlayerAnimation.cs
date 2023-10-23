@@ -3,7 +3,7 @@ using UnityEngine;
 public class PlayerAnimation : MonoBehaviour {
     [SerializeField] private Animator animator;
     [SerializeField] private InputReader input;
-    [SerializeField] private PlayerChannel dataChannel;
+    [SerializeField] private PlayerData dataChannel;
 
     private static readonly int idle = Animator.StringToHash("PlayerIdle");
     private static readonly int run = Animator.StringToHash("PlayerRun");

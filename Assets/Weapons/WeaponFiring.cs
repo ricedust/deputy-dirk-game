@@ -10,7 +10,7 @@ public class WeaponFiring : MonoBehaviour {
     [SerializeField] private Transform bulletSource;
     [SerializeField] private LayerMask gunOwner;
     [SerializeField] private CinemachineImpulseSource cameraShake;
-    
+
     private Coroutine burstFireRoutine;
     public bool isLocked { get; private set; }
     public event Action<WeaponAiming> onFire;
@@ -47,7 +47,7 @@ public class WeaponFiring : MonoBehaviour {
         onFire?.Invoke(aiming);
 
         // shake camera relative to firing direction
-        cameraShake?.GenerateImpulse(bulletSource.rotation * Vector2.left * settings.cameraShakeMagnitude);
+        cameraShake?.GenerateImpulse(aiming.direction * settings.cameraShakeMagnitude);
     }
 
     private IEnumerator FireBurst() {

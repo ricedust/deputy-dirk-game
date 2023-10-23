@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8d72ad09a3d713847a9119d1c42591de, type: 3}
   m_Name: LightShooterSettings
   m_EditorClassIdentifier: 
-  <moveForce>k__BackingField: 4500
+  <moveForce>k__BackingField: 4000
   <avoider>k__BackingField:
     <avoidRadius>k__BackingField: 2.5
     <avoidForce>k__BackingField: 5000

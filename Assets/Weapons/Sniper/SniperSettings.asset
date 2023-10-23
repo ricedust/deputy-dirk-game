@@ -20,7 +20,7 @@ MonoBehaviour:
   <bullet>k__BackingField:
     <speed>k__BackingField: 40
     <bounces>k__BackingField: 2
-    <knockbackImpulse>k__BackingField: 25
+    <knockbackImpulse>k__BackingField: 40
     <isPiercing>k__BackingField: 1
   <firingPattern>k__BackingField:
     <enabled>k__BackingField: 0
