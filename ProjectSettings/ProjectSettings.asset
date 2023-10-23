@@ -15,7 +15,7 @@ PlayerSettings:
   companyName: DefaultCompany
   productName: Deputy Dirk
   defaultCursor: {fileID: 2800000, guid: 313894510766cfa418b8863d9964ec02, type: 3}
-  cursorHotspot: {x: 32, y: 32}
+  cursorHotspot: {x: 16, y: 16}
   m_SplashScreenBackgroundColor: {r: 0.13725491, g: 0.12156863, b: 0.1254902, a: 1}
   m_ShowUnitySplashScreen: 0
   m_ShowUnitySplashLogo: 1

@@ -22,9 +22,9 @@ MonoBehaviour:
     <maxChaseRadius>k__BackingField: 6
     <trackingDamping>k__BackingField: 0.01
   <pauser>k__BackingField:
-    <pauseChance>k__BackingField: 0.5
+    <pauseChance>k__BackingField: 0.7
     <minPause>k__BackingField: 3
-    <maxPause>k__BackingField: 5
+    <maxPause>k__BackingField: 4
   <shooter>k__BackingField:
     <shootChance>k__BackingField: 0.5
     <range>k__BackingField: 8

@@ -13,6 +13,6 @@ MonoBehaviour:
   m_Name: PlayerSettings
   m_EditorClassIdentifier: 
   <lives>k__BackingField: 3
-  <moveForce>k__BackingField: 3600
-  <rollForce>k__BackingField: 4000
+  <moveForce>k__BackingField: 4500
+  <rollForce>k__BackingField: 4500
   <rollDurationSeconds>k__BackingField: 0.4

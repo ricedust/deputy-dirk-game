@@ -14,12 +14,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   <recoilImpulse>k__BackingField: 25
   <kickDistance>k__BackingField: 1
-  <kickRecoverySeconds>k__BackingField: 0.75
-  <cooldownSeconds>k__BackingField: 0.75
+  <kickRecoverySeconds>k__BackingField: 1
+  <cooldownSeconds>k__BackingField: 0.5
   <cameraShakeMagnitude>k__BackingField: 0.35
   <bullet>k__BackingField:
     <speed>k__BackingField: 40
-    <bounces>k__BackingField: 2
+    <bounces>k__BackingField: 0
     <knockbackImpulse>k__BackingField: 40
     <isPiercing>k__BackingField: 1
   <firingPattern>k__BackingField:

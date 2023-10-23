@@ -20,7 +20,7 @@ MonoBehaviour:
     <strafeSpeed>k__BackingField: 1080
     <minChaseRadius>k__BackingField: 3
     <maxChaseRadius>k__BackingField: 5
-    <trackingDamping>k__BackingField: 0.01
+    <trackingDamping>k__BackingField: 0.05
   <pauser>k__BackingField:
     <pauseChance>k__BackingField: 0.5
     <minPause>k__BackingField: 1
