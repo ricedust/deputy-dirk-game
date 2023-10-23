@@ -21,6 +21,11 @@ public class LifeIcon : MonoBehaviour {
         );
     }
 
+    private void OnEnable() {
+        transform.localScale = Vector2.zero;
+        popInTween.Play();
+    }
+
     private void OnDestroy() {
         popInTween.Kill();
         popOutTween.Kill();

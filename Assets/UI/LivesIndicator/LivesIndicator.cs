@@ -5,24 +5,27 @@ public class LivesIndicator : MonoBehaviour {
     [SerializeField] private PlayerSettings playerSettings;
     [SerializeField] private PlayerData playerData;
     [SerializeField] private InputReader input;
+    [SerializeField] private UIData ui;
     [SerializeField] private int iconSpacing;
     private LifeIcon[] icons;
 
-    private void Awake() {
+    private void OnEnable() {
+        ui.OnPlay += CreateIcons;
+        playerData.onUpdateLives += UpdateIcons;
+    }
+
+    private void OnDisable() {
+        ui.OnPlay -= CreateIcons;
+        playerData.onUpdateLives -= UpdateIcons;
+    }
+
+    private void CreateIcons() {
         icons = new LifeIcon[playerSettings.lives];
 
         for (int i = 0; i < icons.Length; i++) {
             icons[i] = Instantiate(lifeIconPrefab, transform);
             icons[i].transform.localPosition = Vector2.right * iconSpacing * i;
         }
-    }
-
-    private void OnEnable() {
-        playerData.onUpdateLives += UpdateIcons;
-    }
-
-    private void OnDisable() {
-        playerData.onUpdateLives -= UpdateIcons;
     }
 
     private void UpdateIcons(int lives) {

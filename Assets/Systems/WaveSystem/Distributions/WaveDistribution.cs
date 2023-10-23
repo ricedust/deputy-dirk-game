@@ -23,7 +23,7 @@ public class WaveDistribution : ScriptableObject {
     /// Returns an instance according to the wave's weighted distribution.
     /// </summary>
     /// <returns></returns>
-    public GameObject GetInstance() {
+    public GameObject GetEnemy() {
         // pick a random number in [0, sum of all weights)
         int rand = Random.Range(0, cumulativeWeights[^1]);
         

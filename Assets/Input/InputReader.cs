@@ -22,4 +22,7 @@ public class InputReader : ScriptableObject {
 
         play = inputActions.ui.play;
     }
+
+    public void DisableUI() => inputActions.ui.Disable();
+    public void EnableUI() => inputActions.ui.Enable();
 }

@@ -28,7 +28,7 @@ public class Pauser : MonoBehaviour {
         // should not pause if chance window is missed
         if (Random.value > settings.pauser.pauseChance) return; 
 
-        remainingTicksToPause = Random.Range(settings.pauser.minPause, settings.pauser.maxPause);
+        remainingTicksToPause = Random.Range(settings.pauser.minPause, settings.pauser.maxPause + 1);
         toDisable.SetEnabled(false);
     }
 

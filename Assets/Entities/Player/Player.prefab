@@ -230,14 +230,15 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1919360612026587684}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: b25a59bdc931aaa43b3e491c611d5e14, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   bulletReceiver: {fileID: 5904049257733030075}
   settings: {fileID: 11400000, guid: 6f01d7e78936145459fc2ef013025385, type: 2}
-  data: {fileID: 0}
+  playerData: {fileID: 11400000, guid: c13f8a04ce617cd4897834f43d51226b, type: 2}
+  waveData: {fileID: 11400000, guid: a3b5077fd728967489a70c343147ab3d, type: 2}
 --- !u!114 &6473684383090842535
 MonoBehaviour:
   m_ObjectHideFlags: 0

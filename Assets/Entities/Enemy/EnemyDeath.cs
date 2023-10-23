@@ -7,7 +7,6 @@ public class EnemyDeath : MonoBehaviour {
     [SerializeField] private Despawner despawner;
     [SerializeField] private Pool pool;
     private bool isDead;
-
     public event Action onDeath;
     private void OnEnable() {
         toDisable.SetEnabled(true);

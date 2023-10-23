@@ -12,4 +12,19 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0c2fdd5be08f16f4f9f066dbe1759868, type: 3}
   m_Name: WaveSettings
   m_EditorClassIdentifier: 
-  distributions: []
+  <enemyPools>k__BackingField:
+    <pools>k__BackingField:
+    - {fileID: 11400000, guid: b94991a10ea65474087f11ff812446eb, type: 2}
+    - {fileID: 11400000, guid: 27e64d44a1c6bd34585b8235d6acb5fe, type: 2}
+  <distributions>k__BackingField:
+  - {fileID: 11400000, guid: b6ab96741d1df3349b242257158cc520, type: 2}
+  - {fileID: 11400000, guid: b93d7adc7ec4d7b4585a46063bfce32c, type: 2}
+  - {fileID: 11400000, guid: cd43e3343412b4c48969f55f4fe534bc, type: 2}
+  <newBatchThreshold>k__BackingField: 3
+  <minBatchesAtOnce>k__BackingField: 1
+  <maxBatchesAtOnce>k__BackingField: 3
+  <spawnIntervalSeconds>k__BackingField: 0.5
+  <minBatchSize>k__BackingField: 2
+  <maxBatchSize>k__BackingField: 4
+  <batchQuotaIncrease>k__BackingField: 1
+  <waveDelaySeconds>k__BackingField: 5

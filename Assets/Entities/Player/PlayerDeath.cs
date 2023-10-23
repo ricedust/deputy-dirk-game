@@ -17,6 +17,7 @@ public class PlayerDeath : MonoBehaviour {
         // ignore if still alive or already dead
         if (lives > 0 || isDead) return;
         isDead = true;
+        player.RaiseOnDeath();
         despawner.Despawn();
     }
 }

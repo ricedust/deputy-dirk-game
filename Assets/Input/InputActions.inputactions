@@ -239,7 +239,18 @@
                 {
                     "name": "",
                     "id": "f1d5ff8b-21c4-44a3-90bc-4ecf843148fe",
-                    "path": "<Keyboard>/space",
+                    "path": "<Keyboard>/anyKey",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "play",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "e3c1bfdc-e93e-456a-a712-b52cb9fa38d3",
+                    "path": "<Mouse>/press",
                     "interactions": "",
                     "processors": "",
                     "groups": "",

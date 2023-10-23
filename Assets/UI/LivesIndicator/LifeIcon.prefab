@@ -89,3 +89,4 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   tweenSeconds: 0.5
+  <isEnabled>k__BackingField: 1

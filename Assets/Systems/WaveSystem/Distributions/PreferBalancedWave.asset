@@ -16,4 +16,4 @@ MonoBehaviour:
   - <pool>k__BackingField: {fileID: 11400000, guid: b94991a10ea65474087f11ff812446eb, type: 2}
     <weight>k__BackingField: 1
   - <pool>k__BackingField: {fileID: 11400000, guid: 27e64d44a1c6bd34585b8235d6acb5fe, type: 2}
-    <weight>k__BackingField: 3
+    <weight>k__BackingField: 1
