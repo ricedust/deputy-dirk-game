@@ -56,9 +56,10 @@ public class WeaponFiring : MonoBehaviour {
     }
 
     private IEnumerator FireBurst() {
+        var waitForSeconds = new WaitForSeconds(settings.firingPattern.secondsBetweenShots);
         for (int i = 0; i < settings.firingPattern.shotsPerBurst; i++) {
             FireSingle();
-            yield return new WaitForSeconds(settings.firingPattern.secondsBetweenShots);
+            yield return waitForSeconds;
         }
     }
 

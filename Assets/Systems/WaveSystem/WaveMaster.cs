@@ -57,6 +57,7 @@ public class WaveMaster : MonoBehaviour {
 
     private IEnumerator SpawnBatchesInSequence(int numBatches) {
         // create different batches in sequence
+        var waitForSecondsInterval = new WaitForSeconds(settings.spawnIntervalSeconds);
         for (int i = 0; i < numBatches; i++) {
 
             // pick the size of the batch and spawn point
@@ -73,7 +74,7 @@ public class WaveMaster : MonoBehaviour {
             state.batchesSpawned++;
             if (state.batchesSpawned >= state.batchQuota) yield break;
 
-            yield return new WaitForSeconds(settings.spawnIntervalSeconds);
+            yield return waitForSecondsInterval;
         }
     }
     private void CheckNextWaveConditions()

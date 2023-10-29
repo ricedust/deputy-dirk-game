@@ -15,8 +15,7 @@ public class AudioExpiration : MonoBehaviour {
 
         if (audioSource.loop) yield break;
 
-        var waitForSeconds = new WaitForSeconds(audioSource.clip.length);
-        yield return waitForSeconds;
+        yield return new WaitForSeconds(audioSource.clip.length);
         audioPool.Release(gameObject);
     }
 }

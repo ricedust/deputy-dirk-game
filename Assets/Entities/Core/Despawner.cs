@@ -17,13 +17,15 @@ public class Despawner : MonoBehaviour {
     }
 
     private IEnumerator FlickerOut(Pool optionalPool = null) {
+        
         yield return new WaitForSeconds(settings.delaySeconds);
         
+        var waitForInterval = new WaitForSeconds(settings.flickerIntervalSeconds);
         for (int i = 0; i < settings.flickerCount; i++) {
             sprite.enabled = false;
-            yield return new WaitForSeconds(settings.flickerIntervalSeconds);
+            yield return waitForInterval;
             sprite.enabled = true;
-            yield return new WaitForSeconds(settings.flickerIntervalSeconds);
+            yield return waitForInterval;
         }
 
         if (optionalPool != null) {

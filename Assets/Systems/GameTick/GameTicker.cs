@@ -4,8 +4,9 @@ using UnityEngine;
 public class GameTicker : MonoBehaviour {
     [SerializeField] private GameTick tick;
     private IEnumerator Start() {
+        var waitForSeconds = new WaitForSeconds(tick.ticksPerSecond);
         while(true) {
-            yield return new WaitForSeconds(tick.ticksPerSecond);
+            yield return waitForSeconds;
             tick.RaiseTick();
         }
     }
