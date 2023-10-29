@@ -339,6 +339,7 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 64
   cameraShake: {fileID: -8117914718389308630}
+  audioChannel: {fileID: 11400000, guid: 3e9f2a9b93a2fdf4ca4c043995030260, type: 2}
 --- !u!114 &1117714006993762109
 MonoBehaviour:
   m_ObjectHideFlags: 0

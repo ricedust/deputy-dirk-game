@@ -17,6 +17,7 @@ MonoBehaviour:
   <kickRecoverySeconds>k__BackingField: 1
   <cooldownSeconds>k__BackingField: 0.5
   <cameraShakeMagnitude>k__BackingField: 0.35
+  <sound>k__BackingField: {fileID: 11400000, guid: 3a09a61db268b6d4bafa1081cfe8f37b, type: 2}
   <bullet>k__BackingField:
     <speed>k__BackingField: 40
     <bounces>k__BackingField: 0

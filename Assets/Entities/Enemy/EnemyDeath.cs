@@ -6,6 +6,8 @@ public class EnemyDeath : MonoBehaviour {
     [SerializeField] private BehaviorGroup toDisable;
     [SerializeField] private Despawner despawner;
     [SerializeField] private Pool pool;
+    [SerializeField] private AudioChannel audioChannel;
+    [SerializeField] private AudioCue deathSound;
     private bool isDead;
     public event Action onDeath;
     private void OnEnable() {
@@ -23,6 +25,7 @@ public class EnemyDeath : MonoBehaviour {
 
         toDisable.SetEnabled(false);
         isDead = true;
+        audioChannel.PlayAudioCue(deathSound, transform.position);
         despawner.Despawn(pool);
         onDeath?.Invoke();
     }

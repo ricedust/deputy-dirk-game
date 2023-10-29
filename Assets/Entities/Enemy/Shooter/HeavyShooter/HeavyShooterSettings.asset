@@ -27,4 +27,4 @@ MonoBehaviour:
     <maxPause>k__BackingField: 5
   <shooter>k__BackingField:
     <shootChance>k__BackingField: 0.7
-    <range>k__BackingField: 8
+    <range>k__BackingField: 9

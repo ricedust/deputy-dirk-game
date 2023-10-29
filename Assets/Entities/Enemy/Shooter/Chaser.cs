@@ -11,11 +11,3 @@ public class Chaser : MonoBehaviour {
         rigidBody.AddForce(chaseDirection * settings.moveForce * Time.fixedDeltaTime);
     }
 }
-
-[Serializable]
-public struct ChaseSettings {
-    [field: SerializeField] public float strafeSpeed { get; private set; } 
-    [field: SerializeField] public float minChaseRadius { get; private set; }
-    [field: SerializeField] public float maxChaseRadius { get; private set; }
-    [field: SerializeField] public float trackingDamping { get; private set; }
-}

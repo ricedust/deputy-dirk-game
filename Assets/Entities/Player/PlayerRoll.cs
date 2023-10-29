@@ -9,6 +9,8 @@ public class PlayerRoll : MonoBehaviour {
     [SerializeField] private Rigidbody2D rigidBody;
     [SerializeField] private PlayerSettings settings;
     [SerializeField] private PlayerData data;
+    [SerializeField] private AudioChannel audioChannel;
+    [SerializeField] private AudioCue rollSound;
     private float rollForce;
     private Tween rollTween;
 
@@ -44,6 +46,7 @@ public class PlayerRoll : MonoBehaviour {
     private void Roll(InputAction.CallbackContext context) {
         if (!rollTween.IsPlaying()) {
             rollTween.Restart();
+            audioChannel.PlayAudioCue(rollSound);
             data.RaiseOnRoll();
         }
     }

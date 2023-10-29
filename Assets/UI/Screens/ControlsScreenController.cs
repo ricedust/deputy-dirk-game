@@ -20,7 +20,7 @@ public class ControlsScreenController : MonoBehaviour {
     private void Advance(InputAction.CallbackContext context)
     {
         input.DisableUI();
-        transform.DOMoveY(-1080, transitionTimeSeconds).SetEase(Ease.InBack).Play();
+        transform.DOMoveY(-1080f, transitionTimeSeconds).SetEase(Ease.InBack).Play();
         ui.hasShownControls = true;
         ui.RaiseOnPlay();
     }

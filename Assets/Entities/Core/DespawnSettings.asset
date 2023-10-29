@@ -12,6 +12,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4d88d51798e599949b58d19471597512, type: 3}
   m_Name: DespawnSettings
   m_EditorClassIdentifier: 
-  <delaySeconds>k__BackingField: 0.25
+  <delaySeconds>k__BackingField: 0.75
   <flickerIntervalSeconds>k__BackingField: 0.1
   <flickerCount>k__BackingField: 2

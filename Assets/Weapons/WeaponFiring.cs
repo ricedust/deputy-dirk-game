@@ -10,6 +10,8 @@ public class WeaponFiring : MonoBehaviour {
     [SerializeField] private Transform bulletSource;
     [SerializeField] private LayerMask gunOwner;
     [SerializeField] private CinemachineImpulseSource cameraShake;
+    [SerializeField] private AudioChannel audioChannel;
+
 
     private Coroutine burstFireRoutine;
     public bool isLocked { get; private set; }
@@ -48,6 +50,9 @@ public class WeaponFiring : MonoBehaviour {
 
         // shake camera relative to firing direction
         cameraShake?.GenerateImpulse(aiming.direction * settings.cameraShakeMagnitude);
+        
+        // play sound
+        audioChannel?.PlayAudioCue(settings.sound, transform.position);
     }
 
     private IEnumerator FireBurst() {

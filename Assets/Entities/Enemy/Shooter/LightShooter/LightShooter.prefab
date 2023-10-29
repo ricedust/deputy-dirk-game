@@ -283,6 +283,8 @@ MonoBehaviour:
   bulletLayer:
     serializedVersion: 2
     m_Bits: 8
+  cameraShake: {fileID: 0}
+  shakeAmount: 0
 --- !u!114 &4555833971333121351
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -306,6 +308,8 @@ MonoBehaviour:
     - {fileID: 3951335287944233854}
   despawner: {fileID: 7466157745119348539}
   pool: {fileID: 11400000, guid: b94991a10ea65474087f11ff812446eb, type: 2}
+  audioChannel: {fileID: 11400000, guid: 3e9f2a9b93a2fdf4ca4c043995030260, type: 2}
+  deathSound: {fileID: 11400000, guid: 0ea74c1d45776f149869238eef9c73b9, type: 2}
 --- !u!114 &7466157745119348539
 MonoBehaviour:
   m_ObjectHideFlags: 0

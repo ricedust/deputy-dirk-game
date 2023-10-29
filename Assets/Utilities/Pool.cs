@@ -8,7 +8,7 @@ public class Pool : ScriptableObject {
     [SerializeField] private GameObject prefab;
     [SerializeField] private int defaultCapacity;
     [SerializeField] private int maxCapacity;
-    public ObjectPool<GameObject> pool { get; private set; }
+    private ObjectPool<GameObject> pool;
 
     private void OnEnable() {
         pool = new ObjectPool<GameObject>(

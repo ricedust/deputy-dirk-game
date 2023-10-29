@@ -1,4 +1,6 @@
+using System;
 using UnityEngine;
+using Random = UnityEngine.Random;
 
 public class ChasePointFluctuation : MonoBehaviour {
     [SerializeField] private ShooterSettings settings;
@@ -38,4 +40,12 @@ public class ChasePointFluctuation : MonoBehaviour {
         chasePoint = Quaternion.Euler(0, 0, rotationToAdd) * chasePoint;
         transform.position = displacedOrigin + chasePoint;
     }    
+}
+
+[Serializable]
+public struct ChaseSettings {
+    [field: SerializeField] public float strafeSpeed { get; private set; } 
+    [field: SerializeField] public float minChaseRadius { get; private set; }
+    [field: SerializeField] public float maxChaseRadius { get; private set; }
+    [field: SerializeField] public float trackingDamping { get; private set; }
 }
