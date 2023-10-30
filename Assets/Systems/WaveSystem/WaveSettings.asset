@@ -16,10 +16,12 @@ MonoBehaviour:
     <pools>k__BackingField:
     - {fileID: 11400000, guid: b94991a10ea65474087f11ff812446eb, type: 2}
     - {fileID: 11400000, guid: 27e64d44a1c6bd34585b8235d6acb5fe, type: 2}
+    - {fileID: 11400000, guid: 9bd82c071231dda4195337eeeff42281, type: 2}
   <distributions>k__BackingField:
   - {fileID: 11400000, guid: b6ab96741d1df3349b242257158cc520, type: 2}
   - {fileID: 11400000, guid: b93d7adc7ec4d7b4585a46063bfce32c, type: 2}
   - {fileID: 11400000, guid: cd43e3343412b4c48969f55f4fe534bc, type: 2}
+  - {fileID: 11400000, guid: fd941a2562218194f91cf2814a200c7b, type: 2}
   <newBatchThreshold>k__BackingField: 3
   <minBatchesAtOnce>k__BackingField: 1
   <maxBatchesAtOnce>k__BackingField: 3

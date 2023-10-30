@@ -4,6 +4,7 @@ using UnityEngine;
 public class AudioExpiration : MonoBehaviour {
     [SerializeField] private Pool audioPool;
     [SerializeField] private AudioSource audioSource; 
+    private WaitForEndOfFrame waitForEndOfFrame = new WaitForEndOfFrame();
     private void OnEnable() {
         StartCoroutine(ExpireOnComplete());
     }
@@ -11,7 +12,7 @@ public class AudioExpiration : MonoBehaviour {
     private IEnumerator ExpireOnComplete() {
 
         // wait for audio source information
-        yield return new WaitForEndOfFrame();
+        yield return waitForEndOfFrame;
 
         if (audioSource.loop) yield break;
 

@@ -10,7 +10,7 @@ public class Pauser : MonoBehaviour {
 
     private void OnEnable() {
         remainingTicksToPause = 0;
-        toDisable.SetEnabled(true);
+        toDisable.SetEnabled();
         
         tick.onTick += AttemptPause;
         tick.onTick += TickDownRemaining;
@@ -37,7 +37,7 @@ public class Pauser : MonoBehaviour {
         if (remainingTicksToPause == 0) return;
 
         remainingTicksToPause--;
-        if (remainingTicksToPause == 0) toDisable.SetEnabled(true);
+        if (remainingTicksToPause == 0) toDisable.SetEnabled();
     }
 }
 

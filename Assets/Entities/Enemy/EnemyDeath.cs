@@ -11,7 +11,7 @@ public class EnemyDeath : MonoBehaviour {
     private bool isDead;
     public event Action onDeath;
     private void OnEnable() {
-        toDisable.SetEnabled(true);
+        toDisable.SetEnabled();
         isDead = false;
         bulletReceiver.onHit += Die;
     }

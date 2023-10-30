@@ -5,7 +5,7 @@ using UnityEngine;
 public struct BehaviorGroup
 {
     [SerializeField] private Behaviour[] behaviours;
-    public void SetEnabled(bool isEnabled) {
+    public void SetEnabled(bool isEnabled = true) {
         Array.ForEach(behaviours, behavior => behavior.enabled = isEnabled);
     }
 }

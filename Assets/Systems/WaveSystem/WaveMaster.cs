@@ -8,7 +8,7 @@ public class WaveMaster : MonoBehaviour {
     [SerializeField] private UIData ui;
     [SerializeField] private WaveSettings settings;
     [SerializeField] private WaveData data;
-    [SerializeField] private Transform[] spawnPoints;
+    [SerializeField] private SpawnPointData spawn;
     [SerializeField] private WaveState state;
 
     [Serializable]
@@ -62,7 +62,7 @@ public class WaveMaster : MonoBehaviour {
 
             // pick the size of the batch and spawn point
             int numEnemies = Random.Range(settings.minBatchSize, settings.maxBatchSize + 1);
-            Transform spawnPoint = spawnPoints[Random.Range(0, spawnPoints.Length)];
+            Transform spawnPoint = spawn.points[Random.Range(0, spawn.points.Count)];
 
             // create the batch using the current distribution
             for (int j = 0; j < numEnemies; j++) {

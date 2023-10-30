@@ -10,7 +10,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 6296475118acfd54098e1a964eb4c545, type: 3}
-  m_Name: PreferBalancedWave
+  m_Name: PreferThiefWave
   m_EditorClassIdentifier: 
   <types>k__BackingField:
   - <pool>k__BackingField: {fileID: 11400000, guid: b94991a10ea65474087f11ff812446eb, type: 2}
@@ -18,4 +18,4 @@ MonoBehaviour:
   - <pool>k__BackingField: {fileID: 11400000, guid: 27e64d44a1c6bd34585b8235d6acb5fe, type: 2}
     <weight>k__BackingField: 1
   - <pool>k__BackingField: {fileID: 11400000, guid: 9bd82c071231dda4195337eeeff42281, type: 2}
-    <weight>k__BackingField: 1
+    <weight>k__BackingField: 3
