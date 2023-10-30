@@ -12,4 +12,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7dd53a306a88a5e47baeeb01cb2a881b, type: 3}
   m_Name: UIData
   m_EditorClassIdentifier: 
+  input: {fileID: 11400000, guid: 1a41dbc4024ab394aa3aa987701a4aee, type: 2}
   hasShownControls: 1

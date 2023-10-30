@@ -13,10 +13,11 @@ MonoBehaviour:
   m_Name: ThiefSettings
   m_EditorClassIdentifier: 
   <moveForce>k__BackingField: 5000
+  <moveVariation>k__BackingField: 90
   <avoider>k__BackingField:
-    <avoidRadius>k__BackingField: 2.5
+    <avoidRadius>k__BackingField: 3
     <avoidForce>k__BackingField: 5000
   <steal>k__BackingField:
-    <radius>k__BackingField: 1
-    <duration>k__BackingField: 2.5
-    <escapeThreshold>k__BackingField: 0.1
+    <radius>k__BackingField: 2
+    <duration>k__BackingField: 3
+    <escapeThreshold>k__BackingField: 1

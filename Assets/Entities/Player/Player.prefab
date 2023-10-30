@@ -138,8 +138,8 @@ MonoBehaviour:
   rigidBody: {fileID: 5982474326754516298}
   settings: {fileID: 11400000, guid: 6f01d7e78936145459fc2ef013025385, type: 2}
   data: {fileID: 11400000, guid: c13f8a04ce617cd4897834f43d51226b, type: 2}
-  audioChannel: {fileID: 0}
-  rollSound: {fileID: 0}
+  audioChannel: {fileID: 11400000, guid: 3e9f2a9b93a2fdf4ca4c043995030260, type: 2}
+  rollSound: {fileID: 11400000, guid: 65d7f27204a1bae45a1d3e76ded2075e, type: 2}
 --- !u!114 &4990636327214248693
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -232,7 +232,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1919360612026587684}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: b25a59bdc931aaa43b3e491c611d5e14, type: 3}
   m_Name: 

@@ -7,6 +7,7 @@ public class SceneTransitionFader : MonoBehaviour {
 
     [SerializeField] private Image image;
     [SerializeField] private PlayerData player;
+    [SerializeField] private TreasuryData treasury;
     [SerializeField] private float transitionSeconds;
     private Color original;
     private void OnEnable() {
@@ -16,10 +17,12 @@ public class SceneTransitionFader : MonoBehaviour {
             .Play();
 
         player.onDeath += FadeOut;
+        treasury.onBankrupt += FadeOut;
     }
 
     private void OnDisable() {
         player.onDeath -= FadeOut;
+        treasury.onBankrupt -= FadeOut;
     }
 
     private void FadeOut() {

@@ -8,21 +8,22 @@ public class InputReader : ScriptableObject {
     public InputAction aim { get; private set; }
     public InputAction shoot { get; private set; }
     public InputAction roll { get; private set; }
-    public InputAction play { get; private set; }
+    public InputAction click { get; private set; }
     private InputActions inputActions;
 
     private void OnEnable() {
         if (inputActions == null) inputActions = new InputActions();
-        inputActions.Enable();
 
         move = inputActions.player.move;
         aim = inputActions.player.aim;
         shoot = inputActions.player.shoot;
         roll = inputActions.player.roll;
 
-        play = inputActions.ui.play;
+        click = inputActions.ui.click;
     }
 
     public void DisableUI() => inputActions.ui.Disable();
     public void EnableUI() => inputActions.ui.Enable();
+    public void DisablePlayer() => inputActions.player.Disable();
+    public void EnablePlayer() => inputActions.player.Enable();
 }

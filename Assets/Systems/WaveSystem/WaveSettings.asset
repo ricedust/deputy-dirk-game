@@ -22,6 +22,7 @@ MonoBehaviour:
   - {fileID: 11400000, guid: b93d7adc7ec4d7b4585a46063bfce32c, type: 2}
   - {fileID: 11400000, guid: cd43e3343412b4c48969f55f4fe534bc, type: 2}
   - {fileID: 11400000, guid: fd941a2562218194f91cf2814a200c7b, type: 2}
+  - {fileID: 11400000, guid: 9ff726a2caffbe848abf279fa3be5251, type: 2}
   <newBatchThreshold>k__BackingField: 3
   <minBatchesAtOnce>k__BackingField: 1
   <maxBatchesAtOnce>k__BackingField: 3

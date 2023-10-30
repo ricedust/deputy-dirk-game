@@ -226,7 +226,7 @@
             "id": "fa986ac8-0f93-4438-81c0-330bcec91f12",
             "actions": [
                 {
-                    "name": "play",
+                    "name": "click",
                     "type": "Button",
                     "id": "1690acb0-f8e4-4e15-b9dd-dfb812772077",
                     "expectedControlType": "Button",
@@ -238,23 +238,12 @@
             "bindings": [
                 {
                     "name": "",
-                    "id": "f1d5ff8b-21c4-44a3-90bc-4ecf843148fe",
-                    "path": "<Keyboard>/anyKey",
-                    "interactions": "",
-                    "processors": "",
-                    "groups": "",
-                    "action": "play",
-                    "isComposite": false,
-                    "isPartOfComposite": false
-                },
-                {
-                    "name": "",
-                    "id": "e3c1bfdc-e93e-456a-a712-b52cb9fa38d3",
+                    "id": "81699a9f-079a-4ae1-89df-b85c4e8bd9de",
                     "path": "<Mouse>/press",
                     "interactions": "",
                     "processors": "",
                     "groups": "",
-                    "action": "play",
+                    "action": "click",
                     "isComposite": false,
                     "isPartOfComposite": false
                 }

@@ -51,7 +51,7 @@ MonoBehaviour:
   spawn: {fileID: 11400000, guid: 9e77b8375f4f7d442ac273b602bb6e1a, type: 2}
   state:
     waveNumber: 1
-    distribution: {fileID: 11400000, guid: b6ab96741d1df3349b242257158cc520, type: 2}
+    distribution: {fileID: 11400000, guid: 9ff726a2caffbe848abf279fa3be5251, type: 2}
     isInIntermission: 1
     batchQuota: 1
     batchesSpawned: 0

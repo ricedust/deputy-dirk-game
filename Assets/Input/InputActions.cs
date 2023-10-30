@@ -248,7 +248,7 @@ public partial class @InputActions: IInputActionCollection2, IDisposable
             ""id"": ""fa986ac8-0f93-4438-81c0-330bcec91f12"",
             ""actions"": [
                 {
-                    ""name"": ""play"",
+                    ""name"": ""click"",
                     ""type"": ""Button"",
                     ""id"": ""1690acb0-f8e4-4e15-b9dd-dfb812772077"",
                     ""expectedControlType"": ""Button"",
@@ -260,23 +260,12 @@ public partial class @InputActions: IInputActionCollection2, IDisposable
             ""bindings"": [
                 {
                     ""name"": """",
-                    ""id"": ""f1d5ff8b-21c4-44a3-90bc-4ecf843148fe"",
-                    ""path"": ""<Keyboard>/anyKey"",
-                    ""interactions"": """",
-                    ""processors"": """",
-                    ""groups"": """",
-                    ""action"": ""play"",
-                    ""isComposite"": false,
-                    ""isPartOfComposite"": false
-                },
-                {
-                    ""name"": """",
-                    ""id"": ""e3c1bfdc-e93e-456a-a712-b52cb9fa38d3"",
+                    ""id"": ""81699a9f-079a-4ae1-89df-b85c4e8bd9de"",
                     ""path"": ""<Mouse>/press"",
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": """",
-                    ""action"": ""play"",
+                    ""action"": ""click"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
                 }
@@ -293,7 +282,7 @@ public partial class @InputActions: IInputActionCollection2, IDisposable
         m_player_roll = m_player.FindAction("roll", throwIfNotFound: true);
         // ui
         m_ui = asset.FindActionMap("ui", throwIfNotFound: true);
-        m_ui_play = m_ui.FindAction("play", throwIfNotFound: true);
+        m_ui_click = m_ui.FindAction("click", throwIfNotFound: true);
     }
 
     public void Dispose()
@@ -425,12 +414,12 @@ public partial class @InputActions: IInputActionCollection2, IDisposable
     // ui
     private readonly InputActionMap m_ui;
     private List<IUiActions> m_UiActionsCallbackInterfaces = new List<IUiActions>();
-    private readonly InputAction m_ui_play;
+    private readonly InputAction m_ui_click;
     public struct UiActions
     {
         private @InputActions m_Wrapper;
         public UiActions(@InputActions wrapper) { m_Wrapper = wrapper; }
-        public InputAction @play => m_Wrapper.m_ui_play;
+        public InputAction @click => m_Wrapper.m_ui_click;
         public InputActionMap Get() { return m_Wrapper.m_ui; }
         public void Enable() { Get().Enable(); }
         public void Disable() { Get().Disable(); }
@@ -440,16 +429,16 @@ public partial class @InputActions: IInputActionCollection2, IDisposable
         {
             if (instance == null || m_Wrapper.m_UiActionsCallbackInterfaces.Contains(instance)) return;
             m_Wrapper.m_UiActionsCallbackInterfaces.Add(instance);
-            @play.started += instance.OnPlay;
-            @play.performed += instance.OnPlay;
-            @play.canceled += instance.OnPlay;
+            @click.started += instance.OnClick;
+            @click.performed += instance.OnClick;
+            @click.canceled += instance.OnClick;
         }
 
         private void UnregisterCallbacks(IUiActions instance)
         {
-            @play.started -= instance.OnPlay;
-            @play.performed -= instance.OnPlay;
-            @play.canceled -= instance.OnPlay;
+            @click.started -= instance.OnClick;
+            @click.performed -= instance.OnClick;
+            @click.canceled -= instance.OnClick;
         }
 
         public void RemoveCallbacks(IUiActions instance)
@@ -476,6 +465,6 @@ public partial class @InputActions: IInputActionCollection2, IDisposable
     }
     public interface IUiActions
     {
-        void OnPlay(InputAction.CallbackContext context);
+        void OnClick(InputAction.CallbackContext context);
     }
 }

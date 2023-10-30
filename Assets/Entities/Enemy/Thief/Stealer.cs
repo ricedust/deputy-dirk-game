@@ -1,11 +1,12 @@
 using System;
 using System.Collections;
 using UnityEngine;
+using Random = UnityEngine.Random;
 
 public class Stealer : MonoBehaviour {
     [SerializeField] private Transform chasePoint;
     [SerializeField] private SpawnPointData spawn;
-    [SerializeField] private MoneyData money;
+    [SerializeField] private TreasuryData treasury;
     [SerializeField] private ThiefSettings settings;
     [SerializeField] private BehaviorGroup toDisable;
     [SerializeField] private Despawner despawner;
@@ -20,45 +21,54 @@ public class Stealer : MonoBehaviour {
     }
 
     private IEnumerator ChaseBag() {
+        yield return new WaitForEndOfFrame();
+
         // keep updating chase point until the thief has closed the gap
-        while (Vector2.Distance(money.location, transform.position) > settings.steal.radius) {
-            chasePoint.position = money.location;
+        while (Vector2.Distance(treasury.location, transform.position) > settings.steal.radius) {
+                    
+            chasePoint.position = treasury.location;
+
+            // escape if no money remains
+            if (treasury.count == 0) {
+                StartCoroutine(Escape());
+                yield break;
+            }
+
             yield return null;
         }
         StartCoroutine(Steal());
     }
 
     private IEnumerator Steal() {
+
+        // escape if no money remains
+        if (treasury.count == 0) {
+            StartCoroutine(Escape());
+            yield break;
+        }
+
         toDisable.SetEnabled(false);
         onSteal?.Invoke();
 
         yield return new WaitForSeconds(settings.steal.duration);
 
-        onStolen?.Invoke();
+        if (treasury.count > 0) onStolen?.Invoke();
         toDisable.SetEnabled();
         StartCoroutine(Escape());
     }
 
     private IEnumerator Escape() {
 
-        // pick the closest spawn point
-        Transform closest = spawn.points[0];
-        float minDistance = Vector2.Distance(closest.position, transform.position);
-
-        foreach (Transform point in spawn.points) {
-            float distance = Vector2.Distance(point.position, transform.position);
-            if (distance < minDistance) {
-                closest = point;
-                minDistance = distance;
-            }
-        }
+        // pick a random spawn point to escape to
+        Transform escapePoint = spawn.points[Random.Range(0, spawn.points.Count)];
 
         // chase the spawn point until reaching it
-        while(Vector2.Distance(closest.position, transform.position) > settings.steal.escapeThreshold) {
-            chasePoint.position = closest.position;
-            Debug.Log(Vector2.Distance(closest.position, transform.position));
+        while(Vector2.Distance(escapePoint.position, transform.position) > settings.steal.escapeThreshold) {
+            chasePoint.position = escapePoint.position;
             yield return null;
         }
+
+        toDisable.SetEnabled(false);
         despawner.Despawn(pool);
     }
 }

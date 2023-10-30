@@ -13,6 +13,7 @@ MonoBehaviour:
   m_Name: LightShooterSettings
   m_EditorClassIdentifier: 
   <moveForce>k__BackingField: 4000
+  <moveVariation>k__BackingField: 180
   <avoider>k__BackingField:
     <avoidRadius>k__BackingField: 2.5
     <avoidForce>k__BackingField: 5000

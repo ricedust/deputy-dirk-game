@@ -4,7 +4,6 @@ using UnityEngine;
 public class Despawner : MonoBehaviour {
     [SerializeField] private SpriteRenderer sprite;
     [SerializeField] private DespawnSettings settings;
-
     private Coroutine flickerOutRoutine;
 
     private void OnEnable() {
@@ -28,11 +27,12 @@ public class Despawner : MonoBehaviour {
             yield return waitForInterval;
         }
 
+        // if a pool is provided, return to pool,
         if (optionalPool != null) {
             optionalPool.Release(gameObject);
             yield break;
         }
-
+        // destroy otherwise
         Destroy(gameObject);
     }
 }

@@ -10,6 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 8469346128951955851}
   - component: {fileID: 7462586077749923771}
+  - component: {fileID: 3117572803410644489}
   m_Layer: 0
   m_Name: BagSprite
   m_TagString: Untagged
@@ -84,6 +85,22 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &3117572803410644489
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5198538426163360557}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8297fb7a360a85e45a1c07fcf2b018b2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  stealer: {fileID: 1592570994732278018}
+  spriteRenderer: {fileID: 7462586077749923771}
+  fullBag: {fileID: 21300000, guid: 03190bdb6e6848c4e984b0710018fcb4, type: 3}
+  emptyBag: {fileID: 21300000, guid: f8f3f8cc28dd21b4b8fcd58ee5dfab9b, type: 3}
 --- !u!1 &7099563559479657326
 GameObject:
   m_ObjectHideFlags: 0
@@ -129,6 +146,7 @@ GameObject:
   - component: {fileID: 1572839984729400338}
   - component: {fileID: 3170923419715235069}
   - component: {fileID: 1592570994732278018}
+  - component: {fileID: -6711471417381160472}
   - component: {fileID: 933242221468124625}
   - component: {fileID: 4555833971333121351}
   - component: {fileID: 7466157745119348539}
@@ -262,7 +280,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   chasePoint: {fileID: 1785577140120706573}
   spawn: {fileID: 11400000, guid: 9e77b8375f4f7d442ac273b602bb6e1a, type: 2}
-  money: {fileID: 11400000, guid: 136913c776c71474fad29e4e2256d89e, type: 2}
+  treasury: {fileID: 11400000, guid: 3373e2745c60a25448f52b4fcce7340a, type: 2}
   settings: {fileID: 11400000, guid: ef06eec0ca9c11542a03b1c4b5075c3e, type: 2}
   toDisable:
     behaviours:
@@ -270,6 +288,21 @@ MonoBehaviour:
     - {fileID: 3170923419715235069}
   despawner: {fileID: 7466157745119348539}
   pool: {fileID: 11400000, guid: 9bd82c071231dda4195337eeeff42281, type: 2}
+--- !u!114 &-6711471417381160472
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7819295191574415803}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7e0a39ab66ca8a74a9030bf0784d7400, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  stealer: {fileID: 1592570994732278018}
+  death: {fileID: 4555833971333121351}
+  treasury: {fileID: 11400000, guid: 3373e2745c60a25448f52b4fcce7340a, type: 2}
 --- !u!114 &933242221468124625
 MonoBehaviour:
   m_ObjectHideFlags: 0
