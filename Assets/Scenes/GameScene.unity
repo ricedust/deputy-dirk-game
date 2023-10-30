@@ -1225,6 +1225,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   image: {fileID: 778775750}
   player: {fileID: 11400000, guid: c13f8a04ce617cd4897834f43d51226b, type: 2}
+  input: {fileID: 11400000, guid: 1a41dbc4024ab394aa3aa987701a4aee, type: 2}
   treasury: {fileID: 11400000, guid: 3373e2745c60a25448f52b4fcce7340a, type: 2}
   transitionSeconds: 2
 --- !u!1 &929559390

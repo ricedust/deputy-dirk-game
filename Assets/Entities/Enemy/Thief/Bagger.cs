@@ -22,8 +22,8 @@ public class Bagger : MonoBehaviour {
         }
     }
 
-    private void Bag() {
-        if (treasury.count == 0) return;
+    private void Bag(bool wasSuccessful) {
+        if (!wasSuccessful) return;
         inPossession = treasury.Steal();
     }
 

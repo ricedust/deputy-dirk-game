@@ -15,7 +15,8 @@ public class BagInflator : MonoBehaviour {
         stealer.onStolen -= Inflate;
     }
 
-    private void Inflate() {
+    private void Inflate(bool wasSuccessful) {
+        if (!wasSuccessful) return;
         spriteRenderer.sprite = fullBag;
     }
 }

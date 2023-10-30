@@ -51,7 +51,7 @@ public class EnemyAnimation : MonoBehaviour {
         ChangeState(steal);
     }
 
-    private void EndSteal() {
+    private void EndSteal(bool _) {
         ChangeState(run);
     }
 }

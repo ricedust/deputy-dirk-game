@@ -13,7 +13,7 @@ public class Stealer : MonoBehaviour {
     [SerializeField] private Pool pool;
 
     public event Action onSteal;
-    public event Action onStolen;
+    public event Action<bool> onStolen;
 
     private void OnEnable() {
         toDisable.SetEnabled();
@@ -52,7 +52,8 @@ public class Stealer : MonoBehaviour {
 
         yield return new WaitForSeconds(settings.steal.duration);
 
-        if (treasury.count > 0) onStolen?.Invoke();
+        // invoke on stolen and pass on whether it was successful
+        onStolen?.Invoke(treasury.count > 0);
         toDisable.SetEnabled();
         StartCoroutine(Escape());
     }
