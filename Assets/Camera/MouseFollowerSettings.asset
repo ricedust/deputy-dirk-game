@@ -12,5 +12,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 574c8985faffe3f469373e37d945cabb, type: 3}
   m_Name: MouseFollowerSettings
   m_EditorClassIdentifier: 
-  <maxLookAhead>k__BackingField: 1.5
+  <maxLookAhead>k__BackingField: 2
   <mouseFollowRatio>k__BackingField: 0.25

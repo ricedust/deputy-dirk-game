@@ -13,6 +13,6 @@ MonoBehaviour:
   m_Name: RollCue
   m_EditorClassIdentifier: 
   <clip>k__BackingField: {fileID: 8300000, guid: a28ec10df6446d844a648dbdf062bfef, type: 3}
-  <volume>k__BackingField: 0.25
+  <volume>k__BackingField: 0.5
   <isLoop>k__BackingField: 0
   <isSpatial>k__BackingField: 0

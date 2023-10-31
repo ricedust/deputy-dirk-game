@@ -13,4 +13,4 @@ MonoBehaviour:
   m_Name: UIData
   m_EditorClassIdentifier: 
   input: {fileID: 11400000, guid: 1a41dbc4024ab394aa3aa987701a4aee, type: 2}
-  hasShownControls: 1
+  hasShownControls: 0
