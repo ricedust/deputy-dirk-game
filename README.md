@@ -1,6 +1,6 @@
 # Deputy Dirk ([itch.io](https://ricedust.itch.io/deputy-dirk))
 
-![banner](https://img.itch.zone/aW1nLzEzODgyNTU2LnBuZw==/original/ro2Ars.png)
+![splash](https://img.itch.zone/aW1nLzEzODgyNTU2LnBuZw==/original/ro2Ars.png)
 
 ## About
 
@@ -21,3 +21,11 @@ RICEDUST
 - developer
 - sound design
 - soundtrack
+
+## Gallery
+
+![main menu](https://img.itch.zone/aW1hZ2UvMjMyMjgwNC8xMzg4MjYwOC5wbmc=/347x500/l5eP80.png)
+![controls](https://img.itch.zone/aW1hZ2UvMjMyMjgwNC8xMzg4MjYwOS5wbmc=/347x500/ynMfa7.png)
+![screenshot](https://img.itch.zone/aW1hZ2UvMjMyMjgwNC8xMzg4MjU4NC5wbmc=/347x500/Zk4OzZ.png)
+
+
